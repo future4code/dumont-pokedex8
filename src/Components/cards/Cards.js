@@ -8,7 +8,7 @@ const PokeCard = () => {
             <p>nome do bichinho</p>
             <ButtonsContainer>
                 <AddButton>+ POKEDEX</AddButton>
-                <DetailsButton onClick={goToDetails}>DETALHES</DetailsButton>
+                <DetailsButton>DETALHES</DetailsButton>
             </ButtonsContainer>
         </CardContainer>
     )
