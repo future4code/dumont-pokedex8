@@ -1,15 +1,22 @@
-import React from 'react'
+import React from "react";
+import {
+  Container,
+  Container2BotaoVoltar,
+  Container3BotaoPoke,
+} from "../header/styled";
 
 const Header = () => {
-
-    return (
-        <div>
-            <h1>Nome Pokemon</h1>
-            <button>Voltar</button>
-            <button>Ir Para Pokedex</button>
-        </div>
-    )
-
-}
+  return (
+    <Container>
+      <div>
+        <Container3BotaoPoke>Ir para Pokedex</Container3BotaoPoke>
+      </div>
+      <h1>Lista de pokemons</h1>
+      <div>
+        <Container2BotaoVoltar>Voltar</Container2BotaoVoltar>
+      </div>
+    </Container>
+  );
+};
 
 export default Header;
