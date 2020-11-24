@@ -4,7 +4,7 @@ const ErrorPage = () => {
 
     return (
         <div>
-            <p>Error 404</p>
+            <p>Error 404 - teste codigo</p>
         </div>
     )
 
