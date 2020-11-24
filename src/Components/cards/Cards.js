@@ -1,11 +1,20 @@
 import React from "react"
-import {CardContainer, AddButton, DetailsButton,ButtonsContainer } from "./styled"
+//import { baseUrl } from "../../constants/baseUrl"
+import {useRequestData} from "../../hooks/useRequestData"
+import {CardContainer, AddButton, DetailsButton,ButtonsContainer, PokemonName, ImagePokemon } from "./styled"
 
-const PokeCard = () => {
+const PokeCard = (props) => {
+    const pokemon = useRequestData(props.url, undefined)
+    
     return(
         <CardContainer>
-            <img src={`https://picsum.photos/200/200/?a=1`} alt={"foto aleatoria"} />
-            <p>nome do bichinho</p>
+            {pokemon && 
+             <div>
+            <ImagePokemon src={pokemon.sprites.front_default} alt={"pokemon"} />
+            <PokemonName>{pokemon.name}</PokemonName>
+            </div>
+             }
+            
             <ButtonsContainer>
                 <AddButton>+ POKEDEX</AddButton>
                 <DetailsButton>DETALHES</DetailsButton>
