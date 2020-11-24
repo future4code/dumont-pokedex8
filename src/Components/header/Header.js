@@ -2,6 +2,7 @@ import React from "react";
 import { Container, ButtonLeft, ButtonRight, PokedexContainer, TitleContainer, Transparent } from "../header/styled";
 import { Switch, Route, useHistory } from 'react-router-dom'
 
+
 const Header = () => {
 
   const history = useHistory()
@@ -48,7 +49,7 @@ const Header = () => {
       </Switch>
 
     </Container>
-  )
-}
+  );
+};
 
 export default Header;
