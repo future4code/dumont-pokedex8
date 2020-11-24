@@ -48,3 +48,11 @@ display: flex;
 flex-direction: row;
 margin-top: 10px;
 `    
+
+export const PokemonName = styled.p`
+color: black;`    
+
+export const ImagePokemon = styled.img`
+width: 200px;
+height:200px;
+`    
