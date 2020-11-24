@@ -6,8 +6,8 @@ const DetailsContainer = styled.div`
     justify-content: space-evenly;
     align-items: center;
     width: 100vw;
-    height: 100vh;
-    background-color: #ccc;
+    height: 90vh;
+    background-color: white;
 
     h3 {
         color: #124B88;
@@ -25,8 +25,6 @@ const ImgContainer = styled.div`
     background-color: #124B88;
     border-radius: 10px;
     padding: 10px;
-
-
 `
 
 const TypeContainer = styled.div`
@@ -73,7 +71,6 @@ const DetailsPage = () => {
 
     return (
         <DetailsContainer>
-
             <ImgContainer>
                 <img src="https://picsum.photos/200/200" name={"front"} />
                 <br />

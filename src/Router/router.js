@@ -4,6 +4,7 @@ import HomePage from '../Screens/HomePage'
 import PokedexPage from '../Screens/PokedexPage'
 import DetailsPage from '../Screens/DetailsPage'
 import Header from '../Components/header/Header'
+import ErrorPage from '../Screens/ErrorPage'
 
 const Router = () => {
     return (
@@ -25,7 +26,7 @@ const Router = () => {
                 </Route>
 
                 <Route>
-                    <div>Error 404</div>
+                    <ErrorPage />
                 </Route>
             </Switch>            
         </BrowserRouter>
