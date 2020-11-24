@@ -11,7 +11,7 @@ const Header = () => {
       <div>
         <Container3BotaoPoke>Ir para Pokedex</Container3BotaoPoke>
       </div>
-      <h1>Lista de pokemons</h1>
+      <h1>Lista de Pokemons</h1>
       <div>
         <Container2BotaoVoltar>Voltar</Container2BotaoVoltar>
       </div>

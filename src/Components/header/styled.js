@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100vw;
   height: 60px;
+  color: white;
   background-color: #124b88;
   display: flex;
   justify-content: center;
@@ -22,6 +23,7 @@ export const Container2BotaoVoltar = styled.button`
   border: 1px solid #c05746;
   border-radius: 5px;
   color: white;
+  padding: 10px 20px;
   &:hover {
     background-color: #ffc600;
     color: white;
@@ -39,6 +41,7 @@ export const Container3BotaoPoke = styled.button`
   border: 1px solid #c05746;
   border-radius: 5px;
   color: white;
+  padding: 10px 20px;
   &:hover {
     background-color: #ffc600;
     color: white;
