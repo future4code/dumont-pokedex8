@@ -38,7 +38,7 @@ const Header = () => {
           </PokedexContainer>
         </Route>
 
-        <Route exact path="/pokedex/poke-detail">
+        <Route exact path="/pokedex/poke-detail/:id">
           <PokedexContainer>
             <ButtonLeft onClick={goBack}>Voltar</ButtonLeft>
             <TitleContainer>Nome do Pokemon</TitleContainer>
