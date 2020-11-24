@@ -15,7 +15,7 @@ const Router = () => {
                     <HomePage />
                 </Route>
 
-                <Route exact path="/pokedex/poke-detail">
+                <Route exact path="/pokedex/poke-detail/:id">
                     <Header />
                     <DetailsPage />
                 </Route>
