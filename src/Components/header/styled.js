@@ -1,22 +1,36 @@
 import styled from "styled-components";
 
+
 export const Container = styled.div`
-  width: 100vw;
-  height: 60px;
-  color: white;
-  background-color: #124b88;
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 0;
-  left: 0;
-`;
+  width: 100vw;
+  height: 10vh;
+  color: white;
+  background-color: #124b88;
+`
 
-export const Container2BotaoVoltar = styled.button`
+export const PokedexContainer = styled.div`
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80vw;
+  height: 10vh;
+`
+
+export const TitleContainer = styled.h1`
+  display: flex;
+  justify-content: center;
+  color: white;
+  text-transform: uppercase;
+` 
+
+export const ButtonLeft = styled.button`
   display: flex;
   flex-direction: row;
+  align-items: left;
   justify-content: space-evenly;
-  margin-left: 20px;
   outline: none;
   cursor: pointer;
   background: #c05746;
@@ -24,13 +38,14 @@ export const Container2BotaoVoltar = styled.button`
   border-radius: 5px;
   color: white;
   padding: 10px 20px;
+
   &:hover {
     background-color: #ffc600;
     color: white;
   }
 `;
 
-export const Container3BotaoPoke = styled.button`
+export const ButtonRight = styled.button`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -46,4 +61,10 @@ export const Container3BotaoPoke = styled.button`
     background-color: #ffc600;
     color: white;
   }
-`;
+`
+export const Transparent = styled.button`
+  color: #124b88;
+  border: none;
+  background-color: #124b88;
+  outline: none;
+`
