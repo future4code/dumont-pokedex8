@@ -8,31 +8,25 @@ const PokeCard = (props) => {
     const history =  useHistory()
     const pokemon = useRequestData(props.url, undefined)
     
-
     const detailsPokemon = (id) => {
         history.push(`/pokedex/poke-detail/${id}`)
     }
-
-    
-
-    
-
-    return(
+     
+    return (
         <CardContainer>
             {pokemon && 
                  <div>
                   <ImagePokemon src={pokemon.sprites.front_default} alt={"pokemon"} />
-                  <PokemonName>{pokemon.name}</PokemonName>
-                  <DetailsButton onClick={() => {detailsPokemon(pokemon.id)}}>DETALHES</DetailsButton>
+                  <PokemonName>{pokemon.name}</PokemonName> 
                  </div>
-             }
+            }
             
             <ButtonsContainer>
-                <AddButton>+ POKEDEX</AddButton>
-               
+                <DetailsButton onClick={() => {detailsPokemon(pokemon.id)}}>DETALHES</DetailsButton>
+                <AddButton> <strong>+</strong> POKEDEX </AddButton>   
             </ButtonsContainer>
         </CardContainer>
     )
 }
 
-export default PokeCard
+export default PokeCard;
