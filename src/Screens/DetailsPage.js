@@ -77,7 +77,6 @@ const InfosContainer = styled.div`
 
 const DetailsPage = () => {
     const pathParams = useParams()
-    //const id = pathParams.id
     const getDetails = useRequestData(`${baseUrl}/${pathParams.id}`, undefined)
 
 

@@ -22,7 +22,7 @@ const PokeCard = (props) => {
                  
                  <ButtonsContainer>
                  <DetailsButton onClick={() => {goToDetailsPokemon(pokemon.id)}}>DETALHES</DetailsButton>
-                 <AddButton> <strong>+</strong> POKEDEX </AddButton>   
+                 <AddButton onClick={props.addItemToPokedex}> <strong>+</strong> POKEDEX </AddButton>   
              </ButtonsContainer>
              </div>
             }
