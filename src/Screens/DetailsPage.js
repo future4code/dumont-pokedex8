@@ -1,5 +1,9 @@
 import React from 'react'
+import {useParams} from 'react-router-dom'
 import styled from 'styled-components'
+import {baseUrl} from "./../constants/baseUrl"
+import { useRequestData } from '../hooks/useRequestData'
+
 
 const DetailsContainer = styled.div`
     display: flex;
@@ -71,43 +75,75 @@ const InfosContainer = styled.div`
 `
 
 const DetailsPage = () => {
+    const pathParams = useParams()
+    //const id = pathParams.id
+    const getDetails = useRequestData(`${baseUrl}/${pathParams.id}`, undefined)
+
+
     
-
     return (
-        <DetailsContainer>
-            <ImgContainer>
-                <img src="https://picsum.photos/200/200" name={"front"} />
-                <br />
-                <img src="https://picsum.photos/200/200" name={"back"} />
-            </ImgContainer>
-
-        <InfosContainer>
+        <div>
+        
+            
+                <DetailsContainer>
+                {getDetails && 
+                <ImgContainer>
+                    <img src={getDetails.sprites.front_default} alt={"front"} />
+                    <br />
+                    <img src={getDetails.sprites.back_default} alt={"back"} />
+                </ImgContainer> }
+    
+            <InfosContainer>
             <TypeContainer>
                 <h3>Type</h3>
-                <p>Type 1</p>
-                <p>Type 2</p>
+                {getDetails && getDetails.types.map((type) => {
+                    return (
+                        <div>
+                        <p>{type.type.name}</p>
+                        </div>
+                    )
+            })}
             </TypeContainer>
+    
+                <StatsContainer >
+                    <h3>Stats</h3>
+                    {getDetails && getDetails.stats.map((stat) => {
+                        return (<div>
+                        <p><strong>{stat.stat.name}:</strong> {stat.base_stat}</p>
+                        {/* <p><strong>Attack:</strong> 50</p>
+                        <p><strong>Defense:</strong> 50</p>
+                        <p><strong>Special-Attack:</strong> 50</p>
+                        <p><strong>Special-Defense:</strong> 50</p>
+                        <p><strong>Speed:</strong> 50</p> */}
 
-            <StatsContainer >
-                <h3>Stats</h3>
-                <p><strong>HP:</strong> 50</p>
-                <p><strong>Attack:</strong> 50</p>
-                <p><strong>Defense:</strong> 50</p>
-                <p><strong>Special-Attack:</strong> 50</p>
-                <p><strong>Special-Defense:</strong> 50</p>
-                <p><strong>Speed:</strong> 50</p>
-            </StatsContainer>
 
-            <MovesContainer>
-                <h3>Moves</h3>
-                <p>Moves name 1</p>
-                <p>Moves name 2</p>
-                <p>Moves name 3</p>
-            </MovesContainer>
-        </InfosContainer>
-           
-        </DetailsContainer>
+                        </div>)
+                    })}
+                </StatsContainer>
+    
+                <MovesContainer>
+                    <h3>Moves</h3>
+                    {/* {getDetails && getDetails.moves.map((move) => {
+                        return (<div>
+                    <p>{move.move.name[0, 1, 2]}</p>
+                                </div>)
+                    })} */}
+                    
+                </MovesContainer>
+            </InfosContainer>
+               
+            </DetailsContainer>
+               
+       </div>
     )
+                
+                 
+              
+       
+    
+
+    
+        
 
 }
 

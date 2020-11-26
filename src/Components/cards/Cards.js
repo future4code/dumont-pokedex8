@@ -9,7 +9,7 @@ const PokeCard = (props) => {
     const pokemon = useRequestData(props.url, undefined)
 
 
-    const detailsPokemon = (id) => {
+    const goToDetailsPokemon = (id) => {
         history.push(`/pokedex/poke-detail/${id}`)
     }
      
@@ -21,7 +21,7 @@ const PokeCard = (props) => {
                   <PokemonName>{pokemon.name}</PokemonName> 
                  
                  <ButtonsContainer>
-                 <DetailsButton onClick={() => {detailsPokemon(pokemon.id)}}>DETALHES</DetailsButton>
+                 <DetailsButton onClick={() => {goToDetailsPokemon(pokemon.id)}}>DETALHES</DetailsButton>
                  <AddButton> <strong>+</strong> POKEDEX </AddButton>   
              </ButtonsContainer>
              </div>
