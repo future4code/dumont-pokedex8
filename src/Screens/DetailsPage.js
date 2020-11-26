@@ -60,6 +60,7 @@ const StatsContainer = styled.div`
 const MovesContainer = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-evenly;
     width: 20vw;
     border: 2px #c05746 dashed;
@@ -108,27 +109,19 @@ const DetailsPage = () => {
                 <StatsContainer >
                     <h3>Stats</h3>
                     {getDetails && getDetails.stats.map((stat) => {
-                        return (<div>
-                        <p><strong>{stat.stat.name}:</strong> {stat.base_stat}</p>
-                        {/* <p><strong>Attack:</strong> 50</p>
-                        <p><strong>Defense:</strong> 50</p>
-                        <p><strong>Special-Attack:</strong> 50</p>
-                        <p><strong>Special-Defense:</strong> 50</p>
-                        <p><strong>Speed:</strong> 50</p> */}
-
-
+                        return (
+                        <div>
+                            <p><strong>{stat.stat.name}:</strong> {stat.base_stat}</p>
                         </div>)
                     })}
                 </StatsContainer>
     
                 <MovesContainer>
                     <h3>Moves</h3>
-                    {/* {getDetails && getDetails.moves.map((move) => {
-                        return (<div>
-                    <p>{move.move.name[0, 1, 2]}</p>
-                                </div>)
-                    })} */}
-                    
+                        {getDetails && getDetails.moves.map((move, num) => {
+                            return ( num < 5 && <p>{move.move.name}</p> )
+                        }
+                    )}               
                 </MovesContainer>
             </InfosContainer>
                
