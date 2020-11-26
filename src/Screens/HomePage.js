@@ -1,8 +1,7 @@
-import React from 'react'
-import { baseUrl } from '../constants/baseUrl'
-import { useRequestData } from '../hooks/useRequestData'
+import React, { useContext, useEffect } from 'react'
 import Card from "../Components/cards/Cards"
 import styled from "styled-components"
+import GlobalStateContext from '../Global/GlobalStateContext'
 
 const HomeContainer = styled.div`
 display: flex;
@@ -13,17 +12,23 @@ justify-content: center;
 `     
 
 const HomePage = () => {
+    const {states, setters, requests} = useContext(GlobalStateContext)
 
-    const getPokemons = useRequestData(`${baseUrl}/?limit=20`, undefined)
+    useEffect(() => {
+        requests.getPokemons()
+      }, [])
 
+  
+    
     return (
         <HomeContainer>
-            {getPokemons && getPokemons.results.map((item) => {
-                return <Card url={item.url} name={item.name}/>
+            {states.pokemon && states.pokemon.map((item) => {
+                return <Card url={item.url}/>
             })}
         </HomeContainer>
     )
 
 }
 
-export default HomePage;
+export default HomePage
+

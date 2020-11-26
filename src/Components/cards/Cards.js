@@ -7,7 +7,8 @@ import {CardContainer, AddButton, DetailsButton,ButtonsContainer, PokemonName, I
 const PokeCard = (props) => {
     const history =  useHistory()
     const pokemon = useRequestData(props.url, undefined)
-    
+
+
     const detailsPokemon = (id) => {
         history.push(`/pokedex/poke-detail/${id}`)
     }
@@ -18,15 +19,17 @@ const PokeCard = (props) => {
                  <div>
                   <ImagePokemon src={pokemon.sprites.front_default} alt={"pokemon"} />
                   <PokemonName>{pokemon.name}</PokemonName> 
-                 </div>
+                 
+                 <ButtonsContainer>
+                 <DetailsButton onClick={() => {detailsPokemon(pokemon.id)}}>DETALHES</DetailsButton>
+                 <AddButton> <strong>+</strong> POKEDEX </AddButton>   
+             </ButtonsContainer>
+             </div>
             }
             
-            <ButtonsContainer>
-                <DetailsButton onClick={() => {detailsPokemon(pokemon.id)}}>DETALHES</DetailsButton>
-                <AddButton> <strong>+</strong> POKEDEX </AddButton>   
-            </ButtonsContainer>
+            
         </CardContainer>
     )
 }
 
-export default PokeCard;
+export default PokeCard

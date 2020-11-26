@@ -1,11 +1,13 @@
-import './App.css';
+import React from "react"
 import Router from './Router/router'
+import GlobalState from './Global/GlobalState'
+
 function App() {
   return (
-    <div className="App">
+    <GlobalState>
       <Router />
-    </div>
-  );
+    </GlobalState>
+  )
 }
 
-export default App;
+export default App
