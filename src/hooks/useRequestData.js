@@ -11,7 +11,6 @@ export function useRequestData(url,initialState) {
         })
         .catch((err) => {
             console.log(err)
-            alert("Erro, tente novamente")
         })
     }, [url])
 

@@ -14,9 +14,10 @@ justify-content: center;
 const HomePage = () => {
     const {states, setters} = useContext(GlobalStateContext)
 
-   
-    const addItemToPokedex = (newItem) => {
-        const index = states.pokemon.findIndex((i) => i.name === newItem.name)
+    
+
+    const addItemToPokedex = (newItem, index) => {
+       // const index = states.pokemon.findIndex((i) => i.name === newItem.name)
         let newPokedex = [...states.pokedex]
         newPokedex.push({ ...newItem})
         let newPokelist = [...states.pokemon]
@@ -30,8 +31,8 @@ const HomePage = () => {
 
     return (
         <HomeContainer>
-            {states.pokemon && states.pokemon.map((item) => {
-                return <Card url={item.url} addItemToPokedex={() => {addItemToPokedex(item)}}      />
+            {states.pokemon && states.pokemon.map((item, index) => {
+                return <Card url={item.url} addItemToPokedex={() => {addItemToPokedex(item, index)}}      />
             })}
         </HomeContainer>
     )
