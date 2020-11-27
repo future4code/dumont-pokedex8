@@ -9,6 +9,15 @@ width: 100vw;
 height: auto;
 flex-wrap: wrap;
 justify-content: center;
+
+    h3 {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40vh;
+        text-transform: uppercase;
+        color: #124B88;
+    }
 `  
 
 const PokedexPage = () => {
@@ -37,7 +46,7 @@ const PokedexPage = () => {
     return (
         <PokedexContainer>
             {pokemonList.length > 0 ? pokemonList : 
-            <p>Pokedex vazia, escolha alguem pokemon!</p>}
+            <h3>Sua Pokedex está vazia,<br /> escolha um pokemon!</h3>}
         </PokedexContainer>
     )
 

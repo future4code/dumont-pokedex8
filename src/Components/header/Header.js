@@ -1,12 +1,15 @@
 import React from "react";
 import { Container, ButtonLeft, ButtonRight, PokedexContainer, TitleContainer, Transparent } from "../header/styled";
 import { Switch, Route, useHistory } from 'react-router-dom'
-
-
-
+import {baseUrl} from '../../constants/baseUrl'
+import {useRequestData} from '../../hooks/useRequestData'
+import {useParams} from 'react-router-dom'
 
 function Header(props) {
   const history = useHistory();
+
+  const pathParams = useParams()
+  const getDetails = useRequestData(`${baseUrl}/${pathParams.id}`, undefined)
  
   const goToPokemonList = () => {
     history.push("/");
@@ -19,10 +22,10 @@ function Header(props) {
   const goBack = () => {
     history.goBack();
   };
-
+  
   return (
-    <Container>
 
+    <Container>
       <Switch>
         <Route exact path="/pokedex">
           <PokedexContainer>
@@ -43,7 +46,7 @@ function Header(props) {
         <Route exact path="/pokedex/poke-detail/:id">
           <PokedexContainer>
             <ButtonLeft onClick={goBack}>Voltar</ButtonLeft>
-            <TitleContainer>{"NOME DO POKEMON"}</TitleContainer>
+              <TitleContainer>{getDetails && <p>{getDetails.name.toUpperCase()}</p>}</TitleContainer>
             <ButtonRight onClick={goToPokemonList}>Ir para Pokedex</ButtonRight>
           </PokedexContainer>
         </Route>
