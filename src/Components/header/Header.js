@@ -3,8 +3,7 @@ import { Container, ButtonLeft, ButtonRight, PokedexContainer, TitleContainer, T
 import { Switch, Route, useHistory } from 'react-router-dom'
 
 const Header = () => {
-
-  const history = useHistory()
+   const history = useHistory()
 
   const goToPokemonList= () => {
       history.push("/");

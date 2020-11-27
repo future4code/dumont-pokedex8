@@ -1,10 +1,10 @@
-import React, {useContext} from "react"
+import React from "react"
 import {useRequestData} from "../../hooks/useRequestData"
 import {useHistory} from "react-router-dom"
-import GlobalStateContext from "../../Global/GlobalStateContext"
+import { CardContainer, ImagePokemon, PokemonName, ButtonsContainer, DetailsButton } from "../cards/styled"
+import { RemoveButton } from "./styled"
 
 const PokedexCard = (props) => {
-    const { states, setters } = useContext(GlobalStateContext)
     const pokemon = useRequestData(props.url, undefined)
     const history =  useHistory()
 
@@ -13,40 +13,21 @@ const PokedexCard = (props) => {
     }
   
 
-    const removeItemFromPokedex = (itemToRemove) => {
-        const index = states.pokedex.findIndex((item) => item.name === itemToRemove.name)
-        let newPokedex = [...states.pokedex]
-        newPokedex.splice(index, 1)
-        setters.setPokedex(newPokedex)
-        console.log(index)
-    }
-
-    return (
-        
-            <div>
+      return (
+             <CardContainer>
                  {pokemon && 
                  <div>
-                  <img src={pokemon.sprites.front_default} alt={"pokemon"} />
-                  <p>{pokemon.name}</p> 
+                  <ImagePokemon src={pokemon.sprites.front_default} alt={pokemon.name} />
+                  <PokemonName>{pokemon.name}</PokemonName> 
                  
-                 <div>
-                 <button onClick={() => {goToDetailsPokemon(pokemon.id)}}>DETALHES</button>
-                 <button onClick={() => {removeItemFromPokedex(pokemon.id)}}> remover </button>   
+                 <ButtonsContainer>
+                 <DetailsButton onClick={() => {goToDetailsPokemon(pokemon.id)}}>DETALHES</DetailsButton>
+                 <RemoveButton onClick={() => {props.removeItem(pokemon.id)}}>REMOVER</RemoveButton>   
+                </ButtonsContainer>
              </div>
-             </div>
-            }
-                     
-                       
-                
-                
-               
-                
-                
-            </div>
-        
-
-
-    )
+                }
+            </CardContainer>
+        )
 }
 
 export default PokedexCard
