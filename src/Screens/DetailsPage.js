@@ -36,6 +36,7 @@ const ImgContainer = styled.div`
 const TypeContainer = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-evenly;
     width: 20vw;
     border: 2px #c05746 dashed;
@@ -48,7 +49,7 @@ const StatsContainer = styled.div`
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    align-items: left;
+    align-items: center;
     justify-content: left;
     width: 300px;
     border: 2px #c05746 dashed;
