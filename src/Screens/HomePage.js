@@ -30,8 +30,7 @@ const HomePage = () => {
         setters.setPokemon(newPokelist)
         alert(`Adicionado na Pokedex!`)
       }
-      console.log(states.pokedex)
-
+      
 
     return (
         <HomeContainer>

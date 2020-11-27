@@ -2,7 +2,7 @@ import React from 'react'
 import {useParams} from 'react-router-dom'
 import styled from 'styled-components'
 import {baseUrl} from "./../constants/baseUrl"
-import { useRequestData } from '../hooks/useRequestData'
+import {useRequestData} from '../hooks/useRequestData'
 
 
 const DetailsContainer = styled.div`
@@ -80,12 +80,9 @@ const DetailsPage = () => {
     const getDetails = useRequestData(`${baseUrl}/${pathParams.id}`, undefined)
 
 
-    
     return (
-        <div>
         
-            
-                <DetailsContainer>
+        <DetailsContainer>
                 {getDetails && 
                 <ImgContainer>
                     <img src={getDetails.sprites.front_default} alt={"front"} />
@@ -94,23 +91,23 @@ const DetailsPage = () => {
                 </ImgContainer> }
     
             <InfosContainer>
-            <TypeContainer>
-                <h3>Type</h3>
-                {getDetails && getDetails.types.map((type) => {
-                    return (
-                        <div>
-                        <p>{type.type.name}</p>
-                        </div>
-                    )
-            })}
-            </TypeContainer>
+                <TypeContainer>
+                    <h3>Type</h3>
+                    {getDetails && getDetails.types.map((type) => {
+                         return (
+                             <div>
+                             <p>{type.type.name.toUpperCase()}</p>
+                             </div>
+                            )
+                    })}
+                </TypeContainer>
     
                 <StatsContainer >
                     <h3>Stats</h3>
                     {getDetails && getDetails.stats.map((stat) => {
                         return (
                         <div>
-                            <p><strong>{stat.stat.name}:</strong> {stat.base_stat}</p>
+                            <p><strong>{stat.stat.name.toUpperCase()}:</strong> {stat.base_stat}</p>
                         </div>)
                     })}
                 </StatsContainer>
@@ -118,25 +115,14 @@ const DetailsPage = () => {
                 <MovesContainer>
                     <h3>Moves</h3>
                         {getDetails && getDetails.moves.map((move, num) => {
-                            return ( num < 5 && <p>{move.move.name}</p> )
+                            return ( num < 5 && <p>{move.move.name.toUpperCase()}</p> )
                         }
                     )}               
                 </MovesContainer>
             </InfosContainer>
-               
-            </DetailsContainer>
-               
-       </div>
+        </DetailsContainer>
     )
                 
-                 
-              
-       
-    
-
-    
-        
-
 }
 
 export default DetailsPage;

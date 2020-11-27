@@ -26,8 +26,6 @@ const PokeCard = (props) => {
              </ButtonsContainer>
              </div>
             }
-            
-            
         </CardContainer>
     )
 }
