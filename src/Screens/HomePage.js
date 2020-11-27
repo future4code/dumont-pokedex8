@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import Card from "./../Components/cards/Cards"
 import styled from "styled-components"
 import GlobalStateContext from '../Global/GlobalStateContext'
@@ -12,13 +12,9 @@ justify-content: center;
 `     
 
 const HomePage = () => {
-    const {states, setters, requests} = useContext(GlobalStateContext)
+    const {states, setters} = useContext(GlobalStateContext)
 
-    useEffect(() => {
-        requests.getPokemons()
-      }, [])
-    
-  
+   
     const addItemToPokedex = (newItem) => {
         const index = states.pokemon.findIndex((i) => i.name === newItem.name)
         let newPokedex = [...states.pokedex]
@@ -29,7 +25,7 @@ const HomePage = () => {
         setters.setPokedex(newPokedex)
         setters.setPokemon(newPokelist)
         alert(`Adicionado na Pokedex!`)
-      }
+    }
       
 
     return (
