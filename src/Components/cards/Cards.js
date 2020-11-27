@@ -16,15 +16,15 @@ const PokeCard = (props) => {
     return (
         <CardContainer>
             {pokemon && 
-                 <div>
-                  <ImagePokemon src={pokemon.sprites.front_default} alt={"pokemon"} />
-                  <PokemonName>{pokemon.name}</PokemonName> 
+            <div>
+                <ImagePokemon src={pokemon.sprites.front_default} alt={"pokemon"} />
+                <PokemonName>{pokemon.name}</PokemonName> 
                  
-                 <ButtonsContainer>
-                 <DetailsButton onClick={() => {goToDetailsPokemon(pokemon.id)}}>DETALHES</DetailsButton>
-                 <AddButton onClick={props.addItemToPokedex}> <strong>+</strong> POKEDEX </AddButton>   
-             </ButtonsContainer>
-             </div>
+            <ButtonsContainer>
+                <DetailsButton onClick={() => {goToDetailsPokemon(pokemon.id)}}>DETALHES</DetailsButton>
+                <AddButton onClick={props.addItemToPokedex}> <strong>+</strong> POKEDEX </AddButton>   
+            </ButtonsContainer>
+            </div>
             }
         </CardContainer>
     )

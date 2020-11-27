@@ -19,6 +19,7 @@ export const CardContainer = styled.div`
 
 export const AddButton = styled.button`
    display: flex;
+   align-items: center;
    outline: none;
    cursor: pointer;
    background:#c05746;
@@ -54,12 +55,16 @@ export const DetailsButton = styled.button`
 
 export const ButtonsContainer = styled.div`
    display: flex;
+   align-items: center;
    justify-content: space-evenly;
    flex-direction: row;
    margin-top: 10px;
 `    
 
 export const PokemonName = styled.p`
+   display: flex;
+   justify-content: center;
+   align-items: center;
    color: black;
    text-transform: uppercase;
 `    
