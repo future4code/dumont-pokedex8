@@ -68,3 +68,10 @@ export const Transparent = styled.button`
   background-color: #124b88;
   outline: none;
 `
+
+const NamePokemon = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+`    
