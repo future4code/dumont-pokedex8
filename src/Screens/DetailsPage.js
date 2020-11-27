@@ -76,13 +76,21 @@ const InfosContainer = styled.div`
     width: 60vw;  
 `
 
+const NamePokemon = styled.div`
+    color: black;
+    
+
+`     
 const DetailsPage = () => {
     const pathParams = useParams()
     const getDetails = useRequestData(`${baseUrl}/${pathParams.id}`, undefined)
 
 
     return (
-        
+        <div>
+            <NamePokemon>
+                {getDetails && <h1>{getDetails.name.toUpperCase()}</h1>}
+            </NamePokemon>
         <DetailsContainer>
                 {getDetails && 
                 <ImgContainer>
@@ -122,6 +130,7 @@ const DetailsPage = () => {
                 </MovesContainer>
             </InfosContainer>
         </DetailsContainer>
+        </div>
     )
                 
 }

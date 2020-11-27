@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import axios from "axios"
 import {baseUrl} from "../constants/baseUrl"
 import GlobalStateContext from "./GlobalStateContext"
@@ -7,6 +7,10 @@ const GlobalState = (props) => {
   const [pokemon, setPokemon] = useState([])
   const [pokedex, setPokedex] = useState([])
   
+  useEffect(() => {
+    requests.getPokemons()
+  }, [])
+
    const getPokemons = () => {
     axios
       .get(`${baseUrl}/?limit=20`)
