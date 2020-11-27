@@ -24,20 +24,27 @@ const PokedexPage = () => {
     const { states, setters } = useContext(GlobalStateContext)
 
     
-    const removeItemFromPokedex = (itemToRemove) => {
-        const index = states.pokedex.findIndex((item) => item.name === itemToRemove.name)
+    const removeItemFromPokedex = (itemToRemove, index) => {
+      //const index = states.pokedex.findIndex((item) => item.name === itemToRemove.name)
+      //da pra fazer sem o findIndex, só colocar o index no parametro da função e no map lá embaixo
         let newPokedex = [...states.pokedex]
         newPokedex.splice(index, 1)
         setters.setPokedex(newPokedex)
+        let pokemonList = [...states.pokemon]
+        pokemonList.push(itemToRemove)
+        console.log(pokemonList[0].url.split("/"))
+        pokemonList.sort((a, b) => a.url.split("/")[6] - b.url.split("/")[6])
+      //pro pokemon voltar pra home na mesma posição, sort: ordena, a - b pra ordenar do menor pro maior, ai a url ta puxando a url de detalhes, o split divide em posições e usa como base o / e no console o id fica na posição 6, por isso o [6] 
+        setters.setPokemon(pokemonList)
     }
 
-    const pokemonList = states.pokedex.map((item) => {
+    const pokemonList = states.pokedex.map((item, index) => {
         return (
             <div>
             <PokedexCard
             key={item.name}
             url={item.url}
-            removeItem={() => {removeItemFromPokedex(item)}}
+            removeItem={() => {removeItemFromPokedex(item, index)}}
              />
             </div>
         )
