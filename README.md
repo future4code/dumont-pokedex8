@@ -8,9 +8,9 @@ Nome dos integrantes:
 Link do Surge: www.link.com.br
 
 O que funciona:
-- Item 1
-- Item 2
+Funções solicitadas
+css básico
 
 O que não funciona: 
-- Item 3
-- Item 4
+desafios
+bug na primeira renderização do site
