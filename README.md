@@ -5,7 +5,8 @@ Nome dos integrantes:
 - Murilo Mendonça
 - Vanessa Sant Helena
 
-Link do Surge: http://pokedex-8.surge.sh/
+Link do Surge:  atualizado: pokedex8.surge.sh
+http://pokedex-8.surge.sh/
 
 O que funciona:
 Funções solicitadas
