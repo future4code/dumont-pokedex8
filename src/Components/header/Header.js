@@ -5,7 +5,7 @@ import {baseUrl} from '../../constants/baseUrl'
 import {useRequestData} from '../../hooks/useRequestData'
 import {useParams} from 'react-router-dom'
 
-function Header(props) {
+function Header() {
   const history = useHistory();
 
   const pathParams = useParams()
