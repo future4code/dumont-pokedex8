@@ -7,7 +7,7 @@ Nome dos integrantes:
 
 Link do Surge:
 atualizado: http://pokedex8.surge.sh/
-http://pokedex-8.surge.sh/
+surge antigo: http://pokedex-8.surge.sh/
 
 O que funciona:
 Funções solicitadas
