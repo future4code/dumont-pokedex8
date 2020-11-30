@@ -1,16 +1,18 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+- Bianca Mendes
+- Murilo Mendonça
+- Vanessa Sant Helena
 
-Link do Surge: www.link.com.br
+Link do Surge:
+atualizado: http://pokedex8.surge.sh/
+surge antigo: http://pokedex-8.surge.sh/
 
 O que funciona:
-- Item 1
-- Item 2
+Funções solicitadas
+css básico
 
 O que não funciona: 
-- Item 3
-- Item 4
+desafios
+
